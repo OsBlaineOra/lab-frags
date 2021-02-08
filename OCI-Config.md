@@ -6,7 +6,7 @@
 2. Click "Start for free"
 3. Populate the forms and create an account.
 4. Once your account is created, [log in](https://www.oracle.com/cloud/sign-in.html) and go to the dashboard.  
-   ![OCI Cloud DashboardcloudDashboard.png)
+   ![OCI Cloud Dashboard](https://osblaineora.github.io/cicd-tools-db-dev/images/cloudDashboard.png)
 
 ## Create a [compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm)  
 
@@ -14,13 +14,13 @@ Compartments are useful when you want to organize and isolate your cloud resourc
 
 1. Click the menu icon in the upper left corner.
 1. Scroll to the bottom, under Identity, click "Compartments".
-   ![Compartment menu itemcompartmentMenu.png)
+   ![Compartment menu item](https://osblaineora.github.io/cicd-tools-db-dev/images/compartmentMenu.png)
 1. Click "Create Compartment".  
-   ![Create compartment buttoncreateCompartment.png)
+   ![Create compartment button](https://osblaineora.github.io/cicd-tools-db-dev/images/createCompartment.png)
 1. Populate the Name and Description.
 1. Leave the parent compartment set to (root).
 1. Click "Create Compartment"  
-   ![Create compartment formcompartmentForm.png)
+   ![Create compartment form](https://osblaineora.github.io/cicd-tools-db-dev/images/compartmentForm.png)
 1. Click the "Oracle Cloud" logo to return to the dashboard.
 
 ## Create an ATP instance
@@ -28,27 +28,27 @@ Compartments are useful when you want to organize and isolate your cloud resourc
 You will need a database to complete the exercises.  An Oracle Autonomous Database handles a lot of the background admin tasks for you so you can focus on your project.
 
 1. Click "Create an ATP database" in the Autonomous Transaction Processing box.  
-   ![OCI Cloud DashboardcloudDashboard.png)
+   ![OCI Cloud Dashboard](https://osblaineora.github.io/cicd-tools-db-dev/images/cloudDashboard.png)
 1. Choose your new compartment.
 1. Enter `MyAtpDb` in Display name
 1. Enter  `MyAtpDb` in Database name
 1. Make sure "Transaction Processing" is selected.
 1. Make sure "Shared Infrastructure" is selected.  
-   ![Create ATP form 1createATPForm1.png)
+   ![Create ATP form 1](https://osblaineora.github.io/cicd-tools-db-dev/images/createATPForm1.png)
 1. Scroll down to "Configure the database" select "Show only Always Free configuration options"  
-   ![Create ATP form 2createATPForm2.png)
+   ![Create ATP form 2](https://osblaineora.github.io/cicd-tools-db-dev/images/createATPForm2.png)
 1. Scroll down to "Create administrator credentials".  Enter and confirm the ADMIN password.  
    **Note:**  the Admin account is the top level user for your new database.  Create a strong password and keep it secure.
 1. Scroll to the bottom and click "Create Autonomous Database".  
-   ![Create ATP form 3createATPForm3.png)  
+   ![Create ATP form 3](https://osblaineora.github.io/cicd-tools-db-dev/images/createATPForm3.png)  
    You will receive an email when your new ATP Database instance has been provisioned.
 1. Locate your new database's OCID and click Copy.
-   ![Copy Database OCIDdbOcid.png)  
+   ![Copy Database OCID](https://osblaineora.github.io/cicd-tools-db-dev/images/dbOcid.png)  
 
 ## Cloud Shell
 
 Click on the Cloud Shell icon.  
-![Open Cloud ShellcloudShell.png)  
+![Open Cloud Shell](https://osblaineora.github.io/cicd-tools-db-dev/images/cloudShell.png)  
 This will open a preconfigured VM that you will use to access and setup your project.
 
 ### Nano Save and Exit
@@ -89,7 +89,7 @@ Once the Cloud Shell is running, create an environment variable for your Databas
 export DB_OCID=<pasteYourOCIDhere>
 ```
 
-![Create environment variableenvVarDbOcid.png)  
+![Create environment variable](https://osblaineora.github.io/cicd-tools-db-dev/images/envVarDbOcid.png)  
 
 The Oracle Autonomous Database uses an extra level of security in the form of a wallet containing access keys for your new Database.  
 
@@ -111,11 +111,11 @@ Later, after everything is setup, you will use SQLDeveloper Web to access your d
 
 1. Click Tools
 1. In the SQL Developer Web box, click the "Open SQL Developer Web" button  
-   ![Open SQL Developer WebOpenSqlDevWeb.png)  
+   ![Open SQL Developer Web](https://osblaineora.github.io/cicd-tools-db-dev/images/OpenSqlDevWeb.png)  
    This will open SQL Developer Web in a new browser tab.
 1. Log in as admin using the admin password you created for your Database.  
-   ![Login to SQL Developer WebsqlDevWebLogon.png)  
-   ![SQL Developer WebsqlDevWeb.png)  
+   ![Login to SQL Developer Web](https://osblaineora.github.io/cicd-tools-db-dev/images/sqlDevWebLogon.png)  
+   ![SQL Developer Web](https://osblaineora.github.io/cicd-tools-db-dev/images/sqlDevWeb.png)  
 1. Switch back to the Oracle Cloud browser tab.
 
 Click the "Oracle Cloud" logo on the left of the menu bar to return to the dashboard.
@@ -125,9 +125,9 @@ Click the "Oracle Cloud" logo on the left of the menu bar to return to the dashb
 An Oracle Compute instance is a Cloud VM that you will use to install and run all of the software for the lab.  
 
 1. Click "Create a VM instance" in the Compute box.
-   ![OCI Cloud DashboardcloudDashboard.png)
+   ![OCI Cloud Dashboard](https://osblaineora.github.io/cicd-tools-db-dev/images/cloudDashboard.png)
 1. Populate the name or keep the default.
-   ![Create Compute instance formcreateComputeForm1.png)
+   ![Create Compute instance form](https://osblaineora.github.io/cicd-tools-db-dev/images/createComputeForm1.png)
 1. Scroll down the the "Add SSH keys" section.
 1. Select "Paste SSH keys".
 1. In your **Cloud Shell**
@@ -144,7 +144,7 @@ An Oracle Compute instance is a Cloud VM that you will use to install and run al
       ```
 
 1. In the **Create Compute form**, paste the public key in the SSH KEYS box.
-   ![Create Compute instance formcreateComputeForm2.png)
+   ![Create Compute instance form](https://osblaineora.github.io/cicd-tools-db-dev/images/createComputeForm2.png)
    If you intend to SSH into your compute instance from any other machine, you may click the "+ Another Key" button and enter the public key for that machine.  
    (you may also want to save a copy of the Cloud Shell private key '~/.ssh/id_rsa' on your local machine.)  
    **DO NOT SHARE your private key**.  This key allows access to your compute instance.
@@ -158,15 +158,15 @@ Keep this IP address handy, it will be used throughout the lab and referred to a
    export COMPUTE_IP=<YourPublicIP>
    ```
 
-   ![Save Public IPsaveComputeIp.png)
+   ![Save Public IP](https://osblaineora.github.io/cicd-tools-db-dev/images/saveComputeIp.png)
 
 1. Next, you will open ports 8080 and 8000 in your cloud Virtual Network (VNIC).
    1. Click "Public Subnet"
-      ![Click Public SubnetopenPort1.png)
+      ![Click Public Subnet](https://osblaineora.github.io/cicd-tools-db-dev/images/openPort1.png)
    1. Click the Security List name.  
-      ![Open Security ListopenPort2.png)  
+      ![Open Security List](https://osblaineora.github.io/cicd-tools-db-dev/images/openPort2.png)  
    1. Click Add Ingress Rule.  
-      ![Add Ingress RuleopenPort3.png)  
+      ![Add Ingress Rule](https://osblaineora.github.io/cicd-tools-db-dev/images/openPort3.png)  
    1. In the SOURCE CIDR box enter
 
       ```text
@@ -180,7 +180,7 @@ Keep this IP address handy, it will be used throughout the lab and referred to a
       ```
 
    1. Click Add Ingress Rule.
-      ![Add Ingress RuleopenPort4.png)
+      ![Add Ingress Rule](https://osblaineora.github.io/cicd-tools-db-dev/images/openPort4.png)
    1. Repeat for 'DESTINATION PORT RANGE' 8000.
 
    **Be Aware**  
@@ -193,7 +193,7 @@ Keep this IP address handy, it will be used throughout the lab and referred to a
    scp Wallet_MyAtpDb.zip opc@${COMPUTE_IP}:/home/opc/
    ```
 
-   ![Upload walletscpWallet.png)
+   ![Upload wallet](https://osblaineora.github.io/cicd-tools-db-dev/images/scpWallet.png)
 
 1. Maximize the Cloud Shell.
 1. Use SSH to access your Compute instance from the Cloud Shell.
@@ -202,7 +202,7 @@ Keep this IP address handy, it will be used throughout the lab and referred to a
    ssh opc@${COMPUTE_IP}
    ```
 
-   ![SSH to Compute instancesshToCompute.png)  
+   ![SSH to Compute instance](https://osblaineora.github.io/cicd-tools-db-dev/images/sshToCompute.png)  
 **Note:** After this, any steps to be completed in your **Cloud Shell**, **Cloud Shell (ssh)** or in your **Compute Instance**, will be completed in the ssh session.
 You can tell which instance you are connected to by looking at the prompt.
 
@@ -378,23 +378,23 @@ This rsa key pair will be used to access your GitHub repository from the compute
 1. **In your browser**  
    Go to [https://github.com/OsBlaineOra/db-devops-tools](https://github.com/OsBlaineOra/db-devops-tools)
 1. Click the 'Fork' button  
-   ![Fork the repoGitHub-Fork.png)  
+   ![Fork the repo](https://osblaineora.github.io/cicd-tools-db-dev/images/GitHub-Fork.png)  
 1. **In your new repository**  
    Click Settings  
-   ![Open SettingsGitHub-Settings.png)  
+   ![Open Settings](https://osblaineora.github.io/cicd-tools-db-dev/images/GitHub-Settings.png)  
 1. Add your public key
    1. On the left, click 'Deploy keys'
    1. Click the 'Add deploy key' button  
-   ![Add Deploy KeyGitHub-DeployKey.png)  
+   ![Add Deploy Key](https://osblaineora.github.io/cicd-tools-db-dev/images/GitHub-DeployKey.png)  
    1. Enter a title for your key 'HoL Compute Instance'
    1. In the 'Key' field, past the public key you generated for this compute instance.
    1. Check 'Allow write access'
    1. Click 'Add key'  
-   ![Add Deploy KeyGitHub-AddKey.png)  
+   ![Add Deploy Key](https://osblaineora.github.io/cicd-tools-db-dev/images/GitHub-AddKey.png)  
 1. Add a Webhook
    1. On the left, click 'Webhooks'
    1. Click the Add webhook button  
-   ![Add webhook buttonGitHub-Webhooks.png)  
+   ![Add webhook button](https://osblaineora.github.io/cicd-tools-db-dev/images/GitHub-Webhooks.png)  
    (You may be asked to re-enter your GitHub password)
    1. Use your Compute instance public IP to populate the Payload URL
 
@@ -403,12 +403,12 @@ This rsa key pair will be used to access your GitHub repository from the compute
       ```
 
    1. Click the Add webhook button. (Ignore the error for now)  
-   ![Add webhook buttonGitHub-AddWebhook.png)  
+   ![Add webhook button](https://osblaineora.github.io/cicd-tools-db-dev/images/GitHub-AddWebhook.png)  
 1. Click the 'Code' tab
 1. Click the 'Clone or download' button
 1. If it doesn't say 'Clone with SSH' click the 'Use SSH' link
 1. Click the button with a clipboard icon next to the clone string to copy it  
-   ![Clone with SSHGitHub-CloneURL.png)  
+   ![Clone with SSH](https://osblaineora.github.io/cicd-tools-db-dev/images/GitHub-CloneURL.png)  
 1. In your **Cloud Shell(ssh)**  
    Clone your new Git repository
 

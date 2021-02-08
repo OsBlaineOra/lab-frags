@@ -4,11 +4,11 @@ Compartments are useful when you want to organize and isolate your cloud resourc
 
 1. Click the menu icon in the upper left corner.
 1. Scroll to the bottom, under Identity, click "Compartments".
-   ![Compartment menu itemcompartmentMenu.png)
+   ![Compartment menu item](https://osblaineora.github.io/cicd-tools-db-dev/images/compartmentMenu.png)
 1. Click "Create Compartment".  
-   ![Create compartment buttoncreateCompartment.png)
+   ![Create compartment button](https://osblaineora.github.io/cicd-tools-db-dev/images/createCompartment.png)
 1. Populate the Name and Description.
 1. Leave the parent compartment set to (root).
 1. Click "Create Compartment"  
-   ![Create compartment formcompartmentForm.png)
+   ![Create compartment form](https://osblaineora.github.io/cicd-tools-db-dev/images/compartmentForm.png)
 1. Click the "Oracle Cloud" logo to return to the dashboard.
