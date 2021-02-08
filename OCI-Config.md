@@ -6,7 +6,7 @@
 2. Click "Start for free"
 3. Populate the forms and create an account.
 4. Once your account is created, [log in](https://www.oracle.com/cloud/sign-in.html) and go to the dashboard.  
-   ![OCI Cloud Dashboard](images/cloudDashboard.png)
+   ![OCI Cloud DashboardcloudDashboard.png)
 
 ## Create a [compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm)  
 
@@ -14,13 +14,13 @@ Compartments are useful when you want to organize and isolate your cloud resourc
 
 1. Click the menu icon in the upper left corner.
 1. Scroll to the bottom, under Identity, click "Compartments".
-   ![Compartment menu item](images/compartmentMenu.png)
+   ![Compartment menu itemcompartmentMenu.png)
 1. Click "Create Compartment".  
-   ![Create compartment button](images/createCompartment.png)
+   ![Create compartment buttoncreateCompartment.png)
 1. Populate the Name and Description.
 1. Leave the parent compartment set to (root).
 1. Click "Create Compartment"  
-   ![Create compartment form](images/compartmentForm.png)
+   ![Create compartment formcompartmentForm.png)
 1. Click the "Oracle Cloud" logo to return to the dashboard.
 
 ## Create an ATP instance
@@ -28,27 +28,27 @@ Compartments are useful when you want to organize and isolate your cloud resourc
 You will need a database to complete the exercises.  An Oracle Autonomous Database handles a lot of the background admin tasks for you so you can focus on your project.
 
 1. Click "Create an ATP database" in the Autonomous Transaction Processing box.  
-   ![OCI Cloud Dashboard](images/cloudDashboard.png)
+   ![OCI Cloud DashboardcloudDashboard.png)
 1. Choose your new compartment.
 1. Enter `MyAtpDb` in Display name
 1. Enter  `MyAtpDb` in Database name
 1. Make sure "Transaction Processing" is selected.
 1. Make sure "Shared Infrastructure" is selected.  
-   ![Create ATP form 1](images/createATPForm1.png)
+   ![Create ATP form 1createATPForm1.png)
 1. Scroll down to "Configure the database" select "Show only Always Free configuration options"  
-   ![Create ATP form 2](images/createATPForm2.png)
+   ![Create ATP form 2createATPForm2.png)
 1. Scroll down to "Create administrator credentials".  Enter and confirm the ADMIN password.  
    **Note:**  the Admin account is the top level user for your new database.  Create a strong password and keep it secure.
 1. Scroll to the bottom and click "Create Autonomous Database".  
-   ![Create ATP form 3](images/createATPForm3.png)  
+   ![Create ATP form 3createATPForm3.png)  
    You will receive an email when your new ATP Database instance has been provisioned.
 1. Locate your new database's OCID and click Copy.
-   ![Copy Database OCID](images/dbOcid.png)  
+   ![Copy Database OCIDdbOcid.png)  
 
 ## Cloud Shell
 
 Click on the Cloud Shell icon.  
-![Open Cloud Shell](images/cloudShell.png)  
+![Open Cloud ShellcloudShell.png)  
 This will open a preconfigured VM that you will use to access and setup your project.
 
 ### Nano Save and Exit
@@ -89,7 +89,7 @@ Once the Cloud Shell is running, create an environment variable for your Databas
 export DB_OCID=<pasteYourOCIDhere>
 ```
 
-![Create environment variable](images/envVarDbOcid.png)  
+![Create environment variableenvVarDbOcid.png)  
 
 The Oracle Autonomous Database uses an extra level of security in the form of a wallet containing access keys for your new Database.  
 
@@ -111,11 +111,11 @@ Later, after everything is setup, you will use SQLDeveloper Web to access your d
 
 1. Click Tools
 1. In the SQL Developer Web box, click the "Open SQL Developer Web" button  
-   ![Open SQL Developer Web](images/OpenSqlDevWeb.png)  
+   ![Open SQL Developer WebOpenSqlDevWeb.png)  
    This will open SQL Developer Web in a new browser tab.
 1. Log in as admin using the admin password you created for your Database.  
-   ![Login to SQL Developer Web](images/sqlDevWebLogon.png)  
-   ![SQL Developer Web](images/sqlDevWeb.png)  
+   ![Login to SQL Developer WebsqlDevWebLogon.png)  
+   ![SQL Developer WebsqlDevWeb.png)  
 1. Switch back to the Oracle Cloud browser tab.
 
 Click the "Oracle Cloud" logo on the left of the menu bar to return to the dashboard.
@@ -125,9 +125,9 @@ Click the "Oracle Cloud" logo on the left of the menu bar to return to the dashb
 An Oracle Compute instance is a Cloud VM that you will use to install and run all of the software for the lab.  
 
 1. Click "Create a VM instance" in the Compute box.
-   ![OCI Cloud Dashboard](images/cloudDashboard.png)
+   ![OCI Cloud DashboardcloudDashboard.png)
 1. Populate the name or keep the default.
-   ![Create Compute instance form](images/createComputeForm1.png)
+   ![Create Compute instance formcreateComputeForm1.png)
 1. Scroll down the the "Add SSH keys" section.
 1. Select "Paste SSH keys".
 1. In your **Cloud Shell**
@@ -144,7 +144,7 @@ An Oracle Compute instance is a Cloud VM that you will use to install and run al
       ```
 
 1. In the **Create Compute form**, paste the public key in the SSH KEYS box.
-   ![Create Compute instance form](images/createComputeForm2.png)
+   ![Create Compute instance formcreateComputeForm2.png)
    If you intend to SSH into your compute instance from any other machine, you may click the "+ Another Key" button and enter the public key for that machine.  
    (you may also want to save a copy of the Cloud Shell private key '~/.ssh/id_rsa' on your local machine.)  
    **DO NOT SHARE your private key**.  This key allows access to your compute instance.
@@ -158,15 +158,15 @@ Keep this IP address handy, it will be used throughout the lab and referred to a
    export COMPUTE_IP=<YourPublicIP>
    ```
 
-   ![Save Public IP](images/saveComputeIp.png)
+   ![Save Public IPsaveComputeIp.png)
 
 1. Next, you will open ports 8080 and 8000 in your cloud Virtual Network (VNIC).
    1. Click "Public Subnet"
-      ![Click Public Subnet](images/openPort1.png)
+      ![Click Public SubnetopenPort1.png)
    1. Click the Security List name.  
-      ![Open Security List](images/openPort2.png)  
+      ![Open Security ListopenPort2.png)  
    1. Click Add Ingress Rule.  
-      ![Add Ingress Rule](images/openPort3.png)  
+      ![Add Ingress RuleopenPort3.png)  
    1. In the SOURCE CIDR box enter
 
       ```text
@@ -180,7 +180,7 @@ Keep this IP address handy, it will be used throughout the lab and referred to a
       ```
 
    1. Click Add Ingress Rule.
-      ![Add Ingress Rule](images/openPort4.png)
+      ![Add Ingress RuleopenPort4.png)
    1. Repeat for 'DESTINATION PORT RANGE' 8000.
 
    **Be Aware**  
@@ -193,7 +193,7 @@ Keep this IP address handy, it will be used throughout the lab and referred to a
    scp Wallet_MyAtpDb.zip opc@${COMPUTE_IP}:/home/opc/
    ```
 
-   ![Upload wallet](images/scpWallet.png)
+   ![Upload walletscpWallet.png)
 
 1. Maximize the Cloud Shell.
 1. Use SSH to access your Compute instance from the Cloud Shell.
@@ -202,7 +202,7 @@ Keep this IP address handy, it will be used throughout the lab and referred to a
    ssh opc@${COMPUTE_IP}
    ```
 
-   ![SSH to Compute instance](images/sshToCompute.png)  
+   ![SSH to Compute instancesshToCompute.png)  
 **Note:** After this, any steps to be completed in your **Cloud Shell**, **Cloud Shell (ssh)** or in your **Compute Instance**, will be completed in the ssh session.
 You can tell which instance you are connected to by looking at the prompt.
 
@@ -378,23 +378,23 @@ This rsa key pair will be used to access your GitHub repository from the compute
 1. **In your browser**  
    Go to [https://github.com/OsBlaineOra/db-devops-tools](https://github.com/OsBlaineOra/db-devops-tools)
 1. Click the 'Fork' button  
-   ![Fork the repo](images/GitHub-Fork.png)  
+   ![Fork the repoGitHub-Fork.png)  
 1. **In your new repository**  
    Click Settings  
-   ![Open Settings](images/GitHub-Settings.png)  
+   ![Open SettingsGitHub-Settings.png)  
 1. Add your public key
    1. On the left, click 'Deploy keys'
    1. Click the 'Add deploy key' button  
-   ![Add Deploy Key](images/GitHub-DeployKey.png)  
+   ![Add Deploy KeyGitHub-DeployKey.png)  
    1. Enter a title for your key 'HoL Compute Instance'
    1. In the 'Key' field, past the public key you generated for this compute instance.
    1. Check 'Allow write access'
    1. Click 'Add key'  
-   ![Add Deploy Key](images/GitHub-AddKey.png)  
+   ![Add Deploy KeyGitHub-AddKey.png)  
 1. Add a Webhook
    1. On the left, click 'Webhooks'
    1. Click the Add webhook button  
-   ![Add webhook button](images/GitHub-Webhooks.png)  
+   ![Add webhook buttonGitHub-Webhooks.png)  
    (You may be asked to re-enter your GitHub password)
    1. Use your Compute instance public IP to populate the Payload URL
 
@@ -403,12 +403,12 @@ This rsa key pair will be used to access your GitHub repository from the compute
       ```
 
    1. Click the Add webhook button. (Ignore the error for now)  
-   ![Add webhook button](images/GitHub-AddWebhook.png)  
+   ![Add webhook buttonGitHub-AddWebhook.png)  
 1. Click the 'Code' tab
 1. Click the 'Clone or download' button
 1. If it doesn't say 'Clone with SSH' click the 'Use SSH' link
 1. Click the button with a clipboard icon next to the clone string to copy it  
-   ![Clone with SSH](images/GitHub-CloneURL.png)  
+   ![Clone with SSHGitHub-CloneURL.png)  
 1. In your **Cloud Shell(ssh)**  
    Clone your new Git repository
 
